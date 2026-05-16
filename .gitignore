@@ -1,6 +1,16 @@
-# Backend Ignores
-backend/__pycache__/
-backend/.venv/
-backend/venv/
-backend/.env
+# Block Python cache folders anywhere in the whole project
+**/__pycache__/
+**/*.pyc
+
+# Block Virtual Environments anywhere
+**/.venv/
+**/venv/
+
+# Block ALL secret environment files anywhere
+**/.env
+**/.env.local
+
+# Block backend database configs
 backend/alembic.ini
+
+
