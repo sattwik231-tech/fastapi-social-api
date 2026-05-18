@@ -9,7 +9,7 @@ import type {
   VotePayload,
 } from "../types/api";
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? "";
+const BASE_URL = (import.meta.env.VITE_API_URL ?? "").replace(/\/+$/, "");
 
 async function parseError(res: Response): Promise<string> {
   try {
