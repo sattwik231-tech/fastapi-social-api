@@ -1,16 +1,26 @@
-# Block Python cache folders anywhere in the whole project
-**/__pycache__/
-**/*.pyc
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
 
-# Block Virtual Environments anywhere
-**/.venv/
-**/venv/
+# Virtual environments
+.venv/
+venv/
 
-# Block ALL secret environment files anywhere
-**/.env
-**/.env.local
+# Secret environment files
+.env
+.env.*
+!.env.example
 
-# Block backend database configs
+# Frontend dependencies/build output
+frontend/node_modules/
+frontend/dist/
+
+# Keep example env files trackable
+!frontend/.env.example
+
+# Optional: only if alembic.ini contains local secrets
 backend/alembic.ini
+alembic.ini
 
 

@@ -31,7 +31,7 @@ def vote(vote: schemas.Vote, db: Session = Depends(database.get_db), current_use
         
     else:
         if not found_vote:
-            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Vote does not exist")
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Vote does not exist")
         
         vote_query.delete(synchronize_session=False)
         db.commit()
